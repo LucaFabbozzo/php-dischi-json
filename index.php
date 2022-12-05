@@ -26,8 +26,11 @@ Scegliete uno o più fra queste funzionalità
  </head>
  <body>
   
- <div id="app"></div>
+ <div id="app">
 
-  <script src="./js/mail.js"></script>
+ 
+ </div>
+
+  <script src="./js/main.js"></script>
  </body>
  </html>
