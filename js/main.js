@@ -28,6 +28,23 @@ createApp({
           this.imgAlbum = '';
           this.dischi = result.data;
       })
+    },
+    removeDischi(index) {
+      const data = new FormData();
+      data.append("removeDischi", index);
+      
+      axios.post(this.apiUrl, data).then((result) => {
+      this.dischi = result.data;
+     });
+    },
+    openCard(index) {
+      const data = new FormData();
+      data.append('openCard', index);
+
+      axios.post(this.apiUrl, data)
+        .then(result => {
+        this.dischi = result.data;
+      })
     }
   },
   mounted() {

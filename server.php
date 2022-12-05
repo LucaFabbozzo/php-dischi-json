@@ -17,10 +17,19 @@ if(isset($_POST['discoImg'])) {
   //lo aggiungo alla lista
   $list[] = $disco;
 
-  //salvo il nuovo array encodato in dischi.json
+  //salvo il nuovo array in dischi.json
+
   file_put_contents('dischi.json', json_encode($list));
+
 }
 
+if(isset($_POST['removeDischi'])) {
+  
+ array_splice($list, $_POST['removeDischi'], 1);
+
+  file_put_contents('dischi.json', json_encode($list));
+
+}
 
 header('Content-type: application/json');
 echo json_encode($list);

@@ -37,9 +37,13 @@ Scegliete uno o più fra queste funzionalità
         </div>
       </div>
    </header>
+  <div class="container-h">
+    <button @click="addDischi()">Add</button>
+    <button @click="removeDischi()">Remove</button>
+  </div>
    <main>
       <div class="container">
-        <div v-for="(album, index) in dischi" :key="index" class="card">
+        <div @click="openCard()" v-for="(album, index) in dischi" :key="index" class="card">
           <img :src="album.poster" alt="">
           <p>{{album.title}}</p>
           <span>{{album.author}}</span>
@@ -47,10 +51,6 @@ Scegliete uno o più fra queste funzionalità
         </div>
       </div>
    </main>
-  <div class="container-h">
-    <button @click="addDischi()">Add</button>
-    <button>Remove</button>
-  </div>
  </div>
 
   <script src="./js/main.js"></script>
