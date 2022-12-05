@@ -47,7 +47,10 @@ Scegliete uno o più fra queste funzionalità
         </div>
       </div>
    </main>
-
+  <div class="container-h">
+    <button @click="addDischi()">Add</button>
+    <button>Remove</button>
+  </div>
  </div>
 
   <script src="./js/main.js"></script>
