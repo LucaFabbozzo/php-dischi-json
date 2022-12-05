@@ -12,7 +12,7 @@ createApp({
       axios.get(this.apiUrl)
         .then(result => {
           console.log(result);
-          dischi = result.data;
+          this.dischi = result.data;
       })
     }
   },
