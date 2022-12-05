@@ -37,9 +37,12 @@ Scegliete uno o più fra queste funzionalità
    </header>
    <main>
       <div class="container">
-        <ul>
-          <li v-for="(album, index) in dischi" :key="index">{{album.title}}</li>
-        </ul>
+        <div v-for="(album, index) in dischi" :key="index" class="card">
+          <img :src="album.poster" alt="">
+          <p>{{album.title}}</p>
+          <span>{{album.author}}</span>
+          <p>{{album.year}}</p>
+        </div>
       </div>
    </main>
 
