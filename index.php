@@ -31,8 +31,10 @@ Scegliete uno o più fra queste funzionalità
   
  <div id="app">
    <header>
-      <div class="Logo">
-        Logo
+      <div class="container-h">
+        <div class="logo">
+          <img src="./img/logo.png" alt="logo">
+        </div>
       </div>
    </header>
    <main>

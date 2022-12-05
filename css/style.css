@@ -35,10 +35,20 @@ span {
   flex-wrap: wrap;
 }
 
+.container-h {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 
 header {
   height: 55px;
   background-color: #05131F;
+  padding: 10px 10px;
+}
+
+.logo img {
+  width: 30px;
 }
 
 .card {
