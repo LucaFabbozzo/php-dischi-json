@@ -48,7 +48,7 @@ Scegliete uno o più fra queste funzionalità
       </div>
 
       <!-- modal dettaglio disco -->
-      <div v-if="showDiscDetail" id="disc-detalils-container">
+      <div v-if="showDiscDetail" id="disc-details-container">
         <div class="disc single-disc">
           <img :src="singleDisc.poster" :alt="singleDisc.title" />
           <small>{{singleDisc.author}}</small>
