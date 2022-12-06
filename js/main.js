@@ -5,8 +5,8 @@ createApp({
     return {
       apiUrl: "server.php",
       dischi: [],
-      imgAlbum:
-        "https://upload.wikimedia.org/wikipedia/en/8/80/TheOffspringSmashalbumcover.jpg",
+      singleDisc: {},
+      showDiscDetail: false
     };
   },
   methods:{
@@ -17,34 +17,16 @@ createApp({
           this.dischi = result.data;
       })
     },
-    addDischi() {
-      const data = {
-        discoImg: this.imgAlbum
+    openDetails(index) {
+      const params = {
+        discIndex: index
       }
-      axios.post(this.apiUrl, data, {
-        header: {'Content-Type': 'multipart/form-data'}
-      })
-        .then(result => {
-          this.imgAlbum = '';
-          this.dischi = result.data;
-      })
-    },
-    removeDischi(index) {
-      const data = new FormData();
-      data.append("removeDischi", index);
-      
-      axios.post(this.apiUrl, data).then((result) => {
-      this.dischi = result.data;
-     });
-    },
-    openCard(index) {
-      const data = new FormData();
-      data.append('openCard', index);
 
-      axios.post(this.apiUrl, data)
+      axios.get(this.apiUrl, { params })
         .then(result => {
-        this.dischi = result.data;
-      })
+          this.showDiscDetail = true;
+          this.singleDisc = result.data;
+        })
     }
   },
   mounted() {

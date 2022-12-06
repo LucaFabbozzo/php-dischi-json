@@ -1,37 +1,22 @@
 <?php
 
 $string = file_get_contents('dischi.json');
-
 $list = json_decode($string, true);
+$result = [];
 
-// se ricevo in post questa variabile vuol dire che devo aggiungere un elemento all'array
-if(isset($_POST['discoImg'])) {
-  // creo l'elemento da aggiungere
-  $disco = [
-      "title" => "Smash",
-      "author" => "The Offspring",
-      "year" => 1994,
-      "poster" => $_POST['discoImg'],
-      "genre" => "Punk rock"
-  ];
-  //lo aggiungo alla lista
-  $list[] = $disco;
+//discIndex
 
-  //salvo il nuovo array in dischi.json
+if (empty($_GET['discIndex'])) {
+  // non invio la richiesta del dettaglio quindi stampo tutti i dischi
+  $result = $list;
+} else {
+  // altrimenti seleziono l'oggetto con l'indice arrivato in GET
 
-  file_put_contents('dischi.json', json_encode($list));
-
+  $result = $list[$_GET['discIndex']];
 }
 
-if(isset($_POST['removeDischi'])) {
-  
- array_splice($list, $_POST['removeDischi'], 1);
-
-  file_put_contents('dischi.json', json_encode($list));
-
-}
 
 header('Content-type: application/json');
-echo json_encode($list);
+echo json_encode($result);
 
 

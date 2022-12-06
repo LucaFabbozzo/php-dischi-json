@@ -37,19 +37,29 @@ Scegliete uno o più fra queste funzionalità
         </div>
       </div>
    </header>
-  <div class="container-h">
-    <button @click="addDischi()">Add</button>
-    <button @click="removeDischi()">Remove</button>
-  </div>
    <main>
       <div class="container">
-        <div @click="openCard()" v-for="(album, index) in dischi" :key="index" class="card">
+        <div @click="openDetails(index)" v-for="(album, index) in dischi" :key="index" class="card">
           <img :src="album.poster" alt="">
           <p>{{album.title}}</p>
           <span>{{album.author}}</span>
           <p>{{album.year}}</p>
         </div>
       </div>
+
+      <!-- modal dettaglio disco -->
+      <div v-if="showDiscDetail" id="disc-detalils-container">
+        <div class="disc single-disc">
+          <img :src="singleDisc.poster" :alt="singleDisc.title" />
+          <small>{{singleDisc.author}}</small>
+          <small>{{singleDisc.genre}}</small>
+          <strong>{{singleDisc.year}}</strong>
+          <div class="close-button-container">
+            <button @click="showDiscDetail = false" class="button close-button">X</button>
+          </div>
+        </div>
+      </div>
+
    </main>
  </div>
 
