@@ -6,7 +6,7 @@ $result = [];
 
 //discIndex
 
-if (empty($_GET['discIndex'])) {
+if (!isset($_GET['discIndex'])) {
   // non invio la richiesta del dettaglio quindi stampo tutti i dischi
   $result = $list;
 } else {
