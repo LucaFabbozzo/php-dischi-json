@@ -37,14 +37,17 @@ Scegliete uno o più fra queste funzionalità
         </div>
       </div>
    </header>
+
    <main>
       <div class="container">
+
         <div @click="openDetails(index)" v-for="(album, index) in dischi" :key="index" class="card">
           <img :src="album.poster" alt="">
           <p>{{album.title}}</p>
           <span>{{album.author}}</span>
           <p>{{album.year}}</p>
         </div>
+
       </div>
 
       <!-- modal dettaglio disco -->
@@ -59,8 +62,9 @@ Scegliete uno o più fra queste funzionalità
           </div>
         </div>
       </div>
-
+      
    </main>
+
  </div>
 
   <script src="./js/main.js"></script>
